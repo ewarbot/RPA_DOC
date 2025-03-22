@@ -29,9 +29,51 @@ class SFTPProcessor:
         self.sftp = None
 
     def connect(self):
-        self.transport = paramiko.Transport((self.host, self.port))
-        self.transport.connect(username=self.username, password=self.password)
-        self.sftp = paramiko.SFTPClient.from_transport(self.transport)
+        """Establece la conexión SFTP y devuelve estado"""
+        try:
+            if not all([self.host, self.port, self.username, self.password]):
+                raise ValueError("Faltan credenciales SFTP")
+
+            self.logger.info(f"Intentando conexión a {self.host}:{self.port}")
+            
+            self.transport = paramiko.Transport((self.host, self.port))
+            self.transport.connect(username=self.username, password=self.password)
+            self.sftp = paramiko.SFTPClient.from_transport(self.transport)
+            
+            # Verificación adicional
+            self.sftp.listdir_attr(self.remote_path)
+            self.logger.info("Conexión SFTP establecida exitosamente")
+            return True
+            
+        except paramiko.AuthenticationException:
+            self.logger.error("Error de autenticación SFTP: Credenciales inválidas")
+            return False
+        except paramiko.SSHException as e:
+            self.logger.error(f"Error SSH: {str(e)}")
+            return False
+        except Exception as e:
+            self.logger.error(f"Error de conexión SFTP: {str(e)}")
+            return False
+
+
+    def is_connected(self):
+        """Verifica si la conexión está activa"""
+        return self.sftp and self.transport and self.transport.is_active()
+
+    def test_connection(self):
+        """Método para probar la conexión"""
+        if self.connect():
+            self.disconnect()
+            return True
+        return False
+
+    def disconnect(self):
+        """Cierra la conexión"""
+        if self.sftp:
+            self.sftp.close()
+        if self.transport:
+            self.transport.close()
+        self.logger.info("Conexión SFTP cerrada")
 
     def download_files(self):
         try:

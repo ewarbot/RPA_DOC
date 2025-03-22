@@ -2,7 +2,7 @@ import os
 import logging
 import sys
 from dotenv import load_dotenv
-from src.file_processor import SFTPProcessor, FileHandler, DatabaseManager
+from file_processor import SFTPProcessor, FileHandler, DatabaseManager
 
 logging.basicConfig(
     level=logging.INFO,
