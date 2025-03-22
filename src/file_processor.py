@@ -8,7 +8,7 @@ from datetime import datetime
 import rarfile
 import psycopg2
 from psycopg2.extras import execute_batch
-from config.parser_config import (
+from parser_config import (
     PARSERS_CONFIG,
     FILE_PATTERNS,
     CUSTOM_PARSERS,
