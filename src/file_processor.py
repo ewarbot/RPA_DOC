@@ -46,13 +46,13 @@ class SFTPProcessor:
             return True
             
         except paramiko.AuthenticationException:
-            self.logger.error("Error de autenticación SFTP: Credenciales inválidas")
+            logging.error("Error de autenticación SFTP: Credenciales inválidas")
             return False
         except paramiko.SSHException as e:
-            self.logger.error(f"Error SSH: {str(e)}")
+            logging.error(f"Error SSH: {str(e)}")
             return False
         except Exception as e:
-            self.logger.error(f"Error de conexión SFTP: {str(e)}")
+            logging.error(f"Error de conexión SFTP: {str(e)}")
             return False
 
 
