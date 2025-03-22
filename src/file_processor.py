@@ -34,7 +34,7 @@ class SFTPProcessor:
             if not all([self.host, self.port, self.username, self.password]):
                 raise ValueError("Faltan credenciales SFTP")
 
-            self.logger.info(f"Intentando conexión a {self.host}:{self.port}")
+            logging.error(f"Intentando conexión a {self.host}:{self.port}")
             
             self.transport = paramiko.Transport((self.host, self.port))
             self.transport.connect(username=self.username, password=self.password)
@@ -42,7 +42,7 @@ class SFTPProcessor:
             
             # Verificación adicional
             self.sftp.listdir_attr(self.remote_path)
-            self.logger.info("Conexión SFTP establecida exitosamente")
+            logging.error("Conexión SFTP establecida exitosamente")
             return True
             
         except paramiko.AuthenticationException:
@@ -73,7 +73,7 @@ class SFTPProcessor:
             self.sftp.close()
         if self.transport:
             self.transport.close()
-        self.logger.info("Conexión SFTP cerrada")
+        logging.error("Conexión SFTP cerrada")
 
     def download_files(self):
         try:
