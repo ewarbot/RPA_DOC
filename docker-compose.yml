@@ -10,6 +10,7 @@ services:
       - ./data:/app/data
       - ./.env:/app/.env
       - ./logs:/var/log
+      - ./entrypoint.sh:/entrypoint.sh
     depends_on:
       - db
 

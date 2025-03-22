@@ -1,0 +1,24 @@
+2025-03-22 00:47:01 1tvn0v-00000K-1d <= root@localhost U=root P=local S=648
+2025-03-22 00:47:01 1tvn0v-00000K-1d => /var/mail/mail <root@localhost> R=mail4root T=address_file
+2025-03-22 00:47:01 1tvn0v-00000K-1d Completed
+2025-03-22 00:48:01 1tvn1t-00000Q-1g <= root@localhost U=root P=local S=648
+2025-03-22 00:48:01 1tvn1t-00000Q-1g => /var/mail/mail <root@localhost> R=mail4root T=address_file
+2025-03-22 00:48:01 1tvn1t-00000Q-1g Completed
+2025-03-22 00:49:01 1tvn2r-00000W-1j <= root@localhost U=root P=local S=648
+2025-03-22 00:49:01 1tvn2r-00000W-1j => /var/mail/mail <root@localhost> R=mail4root T=address_file
+2025-03-22 00:49:01 1tvn2r-00000W-1j Completed
+2025-03-22 00:50:01 1tvn3p-00000c-1n <= root@localhost U=root P=local S=648
+2025-03-22 00:50:01 1tvn3p-00000c-1n => /var/mail/mail <root@localhost> R=mail4root T=address_file
+2025-03-22 00:50:01 1tvn3p-00000c-1n Completed
+2025-03-22 00:51:01 1tvn4n-00000i-1q <= root@localhost U=root P=local S=648
+2025-03-22 00:51:01 1tvn4n-00000i-1q => /var/mail/mail <root@localhost> R=mail4root T=address_file
+2025-03-22 00:51:01 1tvn4n-00000i-1q Completed
+2025-03-22 00:52:01 1tvn5l-00000o-1t <= root@localhost U=root P=local S=648
+2025-03-22 00:52:01 1tvn5l-00000o-1t => /var/mail/mail <root@localhost> R=mail4root T=address_file
+2025-03-22 00:52:01 1tvn5l-00000o-1t Completed
+2025-03-22 00:53:01 1tvn6j-00000u-1x <= root@localhost U=root P=local S=648
+2025-03-22 00:53:01 1tvn6j-00000u-1x => /var/mail/mail <root@localhost> R=mail4root T=address_file
+2025-03-22 00:53:01 1tvn6j-00000u-1x Completed
+2025-03-22 00:54:01 1tvn7h-000010-20 <= root@localhost U=root P=local S=648
+2025-03-22 00:54:01 1tvn7h-000010-20 => /var/mail/mail <root@localhost> R=mail4root T=address_file
+2025-03-22 00:54:01 1tvn7h-000010-20 Completed
